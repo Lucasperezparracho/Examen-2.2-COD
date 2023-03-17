@@ -1,4 +1,9 @@
 public class Barco implements ITransporte{
+    /**
+     * El método que implementamos aquí para el precio está personalizado para Barco en funcion de las diferencias de codigo postal
+     * @param cp Le pasamos el codigo Postal de la ciudad
+     * @return devuelve el precio, que este será mayor en cuanto aumente la diferenia
+     */
     @Override
     public Float costeTotal(Integer cp) {
         int diferencia =  cp - CENTRO_CIUDAD;
@@ -13,6 +18,14 @@ public class Barco implements ITransporte{
         }
 
     }
+    /**
+     * Metodo que calcula el tipo de embalage a usar en función de los siguientes parámetros
+     * @param x será el ancho del obj
+     * @param y será el largo del obj
+     * @param z será el alto del obj
+     * @param peso será cuanto pesa el obj
+     * @return
+     */
     @Override
     public Integer tipoEmbalage(Float x, Float y, Float z, Float peso) {
         if (x < 10 && y < 20 && z<20 || peso <=10){
